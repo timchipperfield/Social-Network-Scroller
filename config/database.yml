@@ -25,6 +25,14 @@ development:
   <<: *default
   database: Social-Network-Scroller_development
 
+test:
+    <<: *default
+    database: Social-Network-Scroller_test
+
+
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
