@@ -1,4 +1,4 @@
-require 'subdomains'
+# require 'subdomains'
 require 'rails_helper'
 
 

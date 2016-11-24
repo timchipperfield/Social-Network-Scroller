@@ -1,11 +1,11 @@
 module Api::V1
 
-  class API::V1::ProfilesController < ApiController
-    
+  class ProfilesController < ApiController
+
 
     def index
-      @profiles = Profile.all
-      render json: @profiles
+      profiles = Profile.all
+      @profiles = profiles.to_json
     end
   end
 

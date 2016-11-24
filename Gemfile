@@ -22,13 +22,14 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
+gem 'rake' , '>= 0.9.1'
 gem 'faker'
 
 group :test do
   gem "rspec-rails", '~> 3.0'
   gem "factory_girl_rails"
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do

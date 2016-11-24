@@ -9,6 +9,7 @@ require 'factory_girl_rails'
 require 'shoulda/matchers'
 require 'simplecov'
 require 'database_cleaner'
+require 'capybara'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

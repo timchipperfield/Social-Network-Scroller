@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% @view_profiles = JSON.parse(@profiles)%>
+    <ul>
+    <% @view_profiles.each do |profile| %>
+      <li><%= profile["name"] %></li>
+    <% end %>
+  </ul>
+    </body>
+</html>
