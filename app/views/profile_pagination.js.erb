@@ -1,4 +1,4 @@
-$('#my-profiles').append('<%= j render @profiles %>');
+$('#feed').append('<%= j render @profiles %>');
 <% if @profiles.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @profiles %>');
 <% else %>

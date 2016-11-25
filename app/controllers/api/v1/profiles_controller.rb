@@ -4,7 +4,12 @@ module Api::V1
 
     def index
       @profiles = Profile.all.paginate(page: params[:page], per_page: 10).order('id DESC')
-      render_with_formatting
+      if request.xhr?
+          render_partial
+      else
+        render_with_formatting
+      end
+
     end
 
     def show
@@ -14,9 +19,16 @@ module Api::V1
 
     def render_with_formatting
       respond_to do |format|
-        format.html
-        format.js
-        format.json { render json: @profiles }
+        format.html { render 'index' }
+        format.js { render 'profile_pagination' }
+        format.json { render json: 'profile_page' }
+      end
+    end
+
+    def render_partial
+      respond_to do |format|
+        format.html  { render :partial => 'my_profiles'}
+        format.js { render 'profile_pagination' }
       end
     end
 
