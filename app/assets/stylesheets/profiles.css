@@ -4,9 +4,20 @@
   margin-right: auto;
 }
 
-/*.profile {
-  padding: 5px;
-  background-color: #ccffe6;
-  border: 1px solid black;
-  border-radius: 3%;
-}*/
+.page-header {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #334d4d;
+  color: white;
+}
+
+body {
+
+}
+
+#profile {
+  background-color: #c2d6d6;
+  margin: 10px;
+  padding: 10px;
+}
