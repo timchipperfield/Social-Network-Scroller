@@ -14,15 +14,14 @@ RSpec.describe Api::V1::ProfilesController, type: :controller do
       end
 
       it "index has all existing profiles" do
-        get :index
-        expect(assigns(:profiles)).to include("Tim Chipperfield")
+        get :index, :format => :json
+        expect(response.body).to include("Tim Chipperfield")
       end
 
       it "provides the profiles as a JSON" do
-        get :index
+        get :index, :format => :json
         expect(response.status).to eq 200
-        profiles = assigns(:profiles)
-        expect(JSON.parse(profiles)).to be_instance_of(Array)
+        expect(response.body).to be_instance_of(String)
       end
 
     end

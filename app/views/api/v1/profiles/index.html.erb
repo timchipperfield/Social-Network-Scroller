@@ -5,11 +5,13 @@
     <title></title>
   </head>
   <body>
-    <% @view_profiles = JSON.parse(@profiles)%>
-    <ul>
-    <% @view_profiles.each do |profile| %>
-      <li><%= profile["name"] %></li>
-    <% end %>
-  </ul>
-    </body>
+
+    <div id="my-profiles">
+      <%= render @profiles %>
+    </div>
+
+    <div id="infinite-scrolling">
+      <%= will_paginate %>
+    </div>
+  </body>
 </html>
