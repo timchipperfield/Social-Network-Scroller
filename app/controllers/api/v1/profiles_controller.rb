@@ -4,12 +4,7 @@ module Api::V1
 
     def index
       @profiles = Profile.all.paginate(page: params[:page], per_page: 10).order('id DESC')
-      if request.xhr?
-          render_partial
-      else
-        render_with_formatting
-      end
-
+      render_ajax_or_sync
     end
 
     def show
@@ -17,7 +12,15 @@ module Api::V1
 
     private
 
-    def render_with_formatting
+    def render_ajax_or_sync
+      if request.xhr?
+          render_partial
+      else
+        render_sync
+      end
+    end
+
+    def render_sync
       respond_to do |format|
         format.html { render 'index' }
         format.js { render 'profile_pagination' }

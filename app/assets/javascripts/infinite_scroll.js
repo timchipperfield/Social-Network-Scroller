@@ -3,7 +3,7 @@ $(function() {
     $(window).on('scroll', function() {
       var more_profiles_url;
       more_profiles_url = $('.pagination a[rel=next]').attr('href');
-      if (more_profiles_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
+      if (more_profiles_url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
         $('.pagination').html("");
         $.ajax({
           url: more_profiles_url,
