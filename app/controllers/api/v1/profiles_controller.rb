@@ -24,7 +24,7 @@ module Api::V1
       respond_to do |format|
         format.html { render 'index' }
         format.js { render 'profile_pagination' }
-        format.json { render json: 'profile_page' }
+        format.json { render json: @profiles }
       end
     end
 
@@ -32,6 +32,7 @@ module Api::V1
       respond_to do |format|
         format.html  { render :partial => 'my_profiles'}
         format.js { render 'profile_pagination' }
+        format.json { render json: @profiles }
       end
     end
 
