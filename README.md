@@ -1,6 +1,6 @@
 # Social Network Scroller App
 
-The main objective of this app is to test query optimisation  of PostgreSQL database for a rails API. The app offers infinite-scrolling using the will-paginate gem and some javascript. It contains one controller, one model app is designed to be a hybrid: if requested, it returns a JSON like an API. It also has a view which can be accessed via rails server with the index path.
+The main objective of this app is to test query optimisation of a PostgreSQL database and a rails API. The app offers infinite-scrolling using the will-paginate gem. The app is simple, containing one controller and one model. It was designed to be a hybrid: if requested, it returns a JSON like an API. It also has a view which can be accessed via rails server with the index path.
 
 
 ## Running the app on your browser
@@ -29,7 +29,7 @@ Execution time: 4.234 ms
 
 ## With pagination
 
-Thoughts: Pagination set up the query faster than without pagination and since it is only querying a limited amount of records at a time, it's naturally faster.
+Thoughts: Pagination set up the query faster than without pagination and since it is only querying a limited amount of records at a time, it's naturally faster than the previous query.
 
 QUERY PLAN
 Limit  (cost=0.31..0.63 rows=10 width=138) (actual time=0.036..0.041 rows=10 loops=1)
@@ -55,7 +55,7 @@ Execution time: 6.000 ms
 
 ## Adding an index on the sorted column
 
-Thoughts: In order to set up the index scan, a lot of time is lost up front. Once this is done and the offset increases, there are fewer records to look through which means that the pagination speeds up overall.
+Thoughts: In order to set up the index scan, a lot of time is lost up-front. After this, future queries are much quicker. As the offset increases, there are fewer records to look through which means that the pagination speeds up overall.
 
 QUERY PLAN
 Limit  (cost=0.78..1.27 rows=10 width=138) (actual time=0.813..0.824 rows=10 loops=1)
