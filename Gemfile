@@ -37,6 +37,7 @@ group :test do
   gem "factory_girl_rails"
   gem 'database_cleaner'
   gem 'rails-controller-testing'
+  gem 'coveralls', require: false
 end
 
 group :development, :test do

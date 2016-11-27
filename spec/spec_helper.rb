@@ -1,6 +1,7 @@
 # require 'subdomains'
 require 'rails_helper'
-
+require 'coveralls'
+Coveralls.wear!
 
 RSpec.configure do |config|
 
