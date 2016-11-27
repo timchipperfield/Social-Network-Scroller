@@ -73,26 +73,22 @@ Execution time: 0.207 ms
 
 ## Some General Thoughts
 
-Early on, I had made the decision to use the will_paginate ruby gem. While this made pagination easier, it uses an offset parameter which numerous blogs seems to indicate decreases performance. If I had more time, I would remove the gem and change the query pattern to use a Where clause which
-
+Early on, I had made the decision to use the will_paginate ruby gem. While this made pagination easier, it uses an offset parameter which numerous blogs seems to indicate decreases performance. If I had more time, I would remove the gem and look into using the seek method with an index.
 
 ## Database Schema
 
 One table in use: "public.profiles"
 
-```
-Table "public.profiles"
+
 Column    |            Type             |                       Modifiers
--------------+-----------------------------+-------------------------------------------------------
+-------------|---------------------------|------------------------------------------
 id          | integer                     | not null default nextval('profiles_id_seq'::regclass)
 name        | character varying           |
 geolocation | character varying           |
 photo       | character varying           |
 created_at  | timestamp without time zone | not null
 updated_at  | timestamp without time zone | not null
+
 Indexes:
 "profiles_pkey" PRIMARY KEY, btree (id)
 "index_profiles_on_updated_at" btree (updated_at)
-
-Thoughts: This is the only table in the database, called "profiles. "It's nice that PostgreSQL automatically creates an index for primary keys, which improves performance.
-```
